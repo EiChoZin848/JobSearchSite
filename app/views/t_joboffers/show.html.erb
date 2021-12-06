@@ -1,0 +1,50 @@
+
+<div class="ibox-content showjobbox" style="min-height: 500px">
+    <div class= "jobtitle" ><%= @t_joboffer.title %></div>
+  
+    <div class="row show_job">
+      <div class = "column category"> <%= @t_joboffer.category %></div>
+      <div class = "column show_salary" ><%= @t_joboffer.minsalary %> ~ <%= @t_joboffer.maxsalary %> </div>
+      <% if signed_in_employer? %>
+        <% if current_employer.t_joboffers.exists?(@t_joboffer.id) %>
+          <div class="column btn_delete"><%= link_to "削除", t_joboffer_path(@t_joboffer), :method=> :delete, :confirm => "Are you sure that you wish to delete?" , :id =>"btn_delete" %></div>
+        <% end %> 
+      <% end %>
+      <% if signed_in_jobseeker? %>
+        <% if @already_applied.present? %>
+            <span class="btn_disable">提出</span>
+        <% else %>
+            
+            <% form_for(@t_appliedjob) do |f| %>
+              <%= f.hidden_field :t_joboffers_id, :value => @t_joboffer.id %>
+              <%= f.submit "提出", :class=> 'btn btn-primary btn_submit', :data => {:disable_with => false}  %>
+            <% end %>
+        
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="row show_employername">
+      <div class="column lbl_employername">会社名：</div>
+      <div class="column spn_employername"> <%= @t_joboffer.employer.name %></div>    
+    </div>
+  
+    <div class="row show_description">
+      <div class = "column lbl_description">求人内容:<small class="time spn_posted_datetime"><time> Posted <%= time_ago_in_words(@t_joboffer.created_at)  %> ago</time></small></div>
+      
+      <div class = "column spn_description"  id="p_job_description"> <%= @t_joboffer.description  %> </div>
+    </div>
+
+    <div class="row show_skill">
+      <div class = "column lbl_skill">必要なスキル:</div>
+      <div class = "label spn_skill"> 
+        <% @t_joboffer.skills.split('- ').each do |s| %>
+          <% if s!='-' and s !='---' and s!='--' and s!='  ' and !s.blank? %>
+            
+            <span class="spn_jobskills"><%= s %></span>
+           
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+</div>

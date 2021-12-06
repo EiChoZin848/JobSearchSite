@@ -1,0 +1,38 @@
+<div class="ibox-content" style="min-height: 500px">
+    <h3>募集書の作成</h3>
+  
+    <% form_for @t_joboffer, :html => { :multipart => true } do |f| %>
+  
+      
+      <div class="form-group m-t">
+        <%= f.label '題名：' %><br />
+        <%= f.text_field :title %>
+      </div>
+      
+      <div class="form-group m-t">
+        <%= f.label '職種：' %><br />
+        <%= f.select :category, @categories.map {|c| [c.title, c.title] }, :placeholder=> "ーえらぶー"  %>
+
+      </div>
+  
+      <div class="form-group m-t">
+        <%= f.label '業務場所：' %><br />
+        <%= f.select :location, @locations.map {|c| [c.city, c.city]}, :placeholder => "ーえらぶー" %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label 'スキル：' %><br /> 
+        <%= f.select :skills, @skills.map {|c| [c.title, c.title] } %>
+      </div>
+
+
+      <div class="form-group"> 
+        <%= f.label '求人内容:' %><br />
+        <%= f.text_area :description %>
+      </div>
+  
+      
+      <div class="form-group"><%= f.submit "作成", :class=>"btn_signup" %></div>
+    <% end %>
+  
+</div>

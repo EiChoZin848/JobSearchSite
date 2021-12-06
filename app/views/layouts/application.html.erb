@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+        <title>ジョプ検索サイト</title>
+        <%= csrf_meta_tag %>
+        <%= stylesheet_link_tag    'application', :media => 'all', :'data-turbolinks-track' => 'reload' %>
+        <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" %>
+        <%= javascript_include_tag 'application', :'data-turbolinks-track' => 'reload' %>
+
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+
+
+    </head>
+    <body>
+  
+    <div class="noti">
+        <% if flash[:notice] %>
+  		    <div class="notification is-primary global-notification">
+  			    <p class="notice"><%= notice %></p>
+  		    </div>
+  	    <% end %>
+  	    <% if flash[:alert] %>
+  		    <div class="notification is-danger global-notification">
+  			    <p class="alert"><%= alert %></p>
+  		    </div>
+  	    <% end %>
+    </div>
+    
+    <div class="header">
+        <nav class="navbar is-light" role="navigation" aria-label="main navigation" >
+
+            <div class="navbar-brand lbl_jobsearchsite">        
+                
+                <span class="navbar-item is-dark job" id="logo">ジョプ検索サイト</span>
+            </div>
+            <ul class="navbar-brand navbar-end pull-right is-light lbl_header_right">
+                    
+                <% if signed_in_employer? %>
+                    <li class="navbar-item header_link"><%= link_to "求職者の検索", jobseekers_path , :class => "navbar-item ", :id => "header_link" %></li>
+                    <li class="navbar-item header_link"><%= link_to "募集書の作成",'/t_joboffer_path', :class => "navbar-item ", :id => "header_link" %></li>                            
+
+                    <li class="navbar-item has-dropdown is-hoverable">
+                        <%= link_to "アカウント", "#", :class=>"navbar-link header_link" , :id =>"header_link" %>
+                        <ul class="navbar-dropdown is-right">
+
+                            <li class="navbar-item dropdown_link " ><p class="navbar-item" id="user_name"><%= current_employer.name %>(雇用主)</p></li>
+                            <li class="navbar-item dropdown_link"><%= link_to "プロフィールを見る", current_employer, :class => "navbar-item ", :id => "dropdown_link" %></li>
+                            <li class="navbar-item dropdown_link"><%= link_to "プロフィールの編集", edit_employer_path , :class => "navbar-item ", :id => "dropdown_link" %></li>
+                            <li class="navbar-item dropdown_link"><%= link_to "パスワードの変更",  newpassword_path,  :class => "navbar-item ", :id => "dropdown_link" %></li>
+                            <li class="navbar-item dropdown_link"><%= link_to "サインアウト",'/sign_out_employer_path', :method => :delete, :class => "navbar-item ", :id => "dropdown_link" %></li>      
+                                                
+                        </ul>
+                    </li>
+                <% elsif signed_in_jobseeker? %>
+                    <li class="navbar-item header_link"><%= link_to "求人の検索", search_job_path , :class => "navbar-item ", :id => "header_link" %></li>
+
+                    <li class="navbar-item header_link has-dropdown is-hoverable">
+                        <%= link_to "アカウント", "#", :class=>"navbar-link header_link" , :id =>"header_link" %>
+                        <ul class="navbar-dropdown is-right">
+                            <li class="navbar-item dropdown_link "><p class="navbar-item" id="user_name"><%= current_jobseeker.name %>(求職者)</p></li>
+                            <li class="navbar-item dropdown_link "><%= link_to "プロフィールを見る", current_jobseeker, :class => "navbar-item ", :id => "dropdown_link" %></li>
+                            <li class="navbar-item dropdown_link"><%= link_to "プロフィールの編集 ", edit_jobseeker_path, :class => "navbar-item ", :id => "dropdown_link" %></li>
+                            <li class="navbar-item dropdown_link"><%= link_to "パスワードの変更",  jobseeker_newpassword_path,  :class => "navbar-item ", :id => "dropdown_link" %></li>
+                            <li class="navbar-item dropdown_link"><%= link_to "サインアウト",'/sign_out_jobseeker_path', :method => :delete, :class => "navbar-item ", :id => "dropdown_link" %></li>
+
+                        </ul>
+                    </li>                        
+                <% else %>
+
+                    <li class="navbar-item header_link"><%= link_to 'ホーム', root_path, :class => "navbar-item is-dark", :id => "header_link" %></li>
+                    <li class="navbar-item header_link"><%= link_to "求人の検索", search_job_path , :class => "navbar-item ", :id => "header_link" %></li>
+                    <li class="navbar-item header_link"><%= link_to "求職者の検索", jobseekers_path , :class => "navbar-item ", :id => "header_link" %></li>
+                    <li class="navbar-item header_link"><%= link_to "サインアップ", sign_up_path, :class => "navbar-item ", :id => "header_link" %></li>
+                    <li class="navbar-item header_link"><%= link_to "サインイン", sign_in_path, :class => "navbar-item ", :id => "header_link" %></li>
+                    
+                <% end %>
+
+
+                
+            </ul>
+
+        </nav>
+    </div>
+
+    <div class="homepage">
+
+        <%= yield %>
+    </div>
+
+
+   <br />
+
+   
+    <div class="footer" id="foot">
+
+        <div class="foot_text">
+        <strong> @<%= Time.now.year %> CyberMissions Myanmar Co.Ltd. All right reserved.</strong>  
+        </div>
+    </div>
+
+
+    </body>
+</html>

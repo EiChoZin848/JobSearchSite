@@ -1,0 +1,128 @@
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<div class=" joboffer" style="min-height: 500px">
+  <% form_tag search_job_path, :method => :get, :html => { :multipart => true } do |f| %>  
+ 
+    <div class="searchjob">
+      <p class="h3_searchjob">求人の検索</p>
+    </div>
+    <div class="searchjobbox">
+ 
+      <div class="form-group m-t">
+        <div class="columns">
+          <div class="field column is-2">
+            <label>職種：</label>
+          </div>
+          <div class="field column is-12">
+            <%= select_tag :category, options_for_select([["ーえらぶー", "-"]] + @categories.collect {|c| [c.title, c.title]}) , :prompt=> 'ーえらぶー', :class => "inputform " , :id => "select_category" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group m-t">
+        <div class="columns">
+          <div class="field column is-2">
+            <label>業務場所：</label>
+          </div>
+          <div class="field column is-12">
+            <%= select_tag :location, options_for_select([["ーえらぶー", "-"]] + @locations.collect {|c| [c.city, c.city]}) , :prompt => "ーえらぶー" , :class => "inputform select_city" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="columns">
+          <div class="field column is-2">
+            <label>スキル：</label>
+          </div>
+          <div class="field column is-12">
+            <%= select_tag :skills, options_for_select([["ーえらぶー", "-"]] + @skills.collect {|c| [c.title, c.title]}) , :prompt => "ーえらぶー", :class => "inputform select_skill" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        
+        <div class="columns">
+          
+          <div class="field column is-2">
+            <span>給料：</span>
+          </div>
+          <div class="field column is-3">
+            <%= select_tag :minsalary, options_for_select([["ーえらぶー", "-"]] + @salaries.collect {|c| [c.monthly, c.monthly]}), :prompt => "-最小-", :class => "select_minimum_salary", :style => "min-width:70px" %>
+            <span class="tantan is-right"> ~</span>
+          </div>
+         
+          <div class="field column is-3">
+            <%= select_tag :maxsalary, options_for_select([["ーえらぶー", "-"]] + @salaries.collect {|c| [c.monthly, c.monthly]}), :prompt => "-最大-", :class => "select_maximum_salary" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="columns">
+          <div class="field column is-2">
+          </div>
+          <div class ="field column">
+            <%= submit_tag "検索", :class=>" btn_search" %><%= submit_tag "リセット", :class=>"btn_reset" %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <% end %>
+    
+
+
+    
+
+
+  <div class="lbl_number_of_job">
+      <%= @t_joboffers.total_entries %> 求人が見つかりました。
+  </div>
+    <% @t_joboffers.each do |t_joboffer| %>
+      <ul class=" joblist">
+        <li class="lbl_job_title"><span id=""><%= t_joboffer.title %></span> </li>
+        <li class="job_salary">
+          <span class ="lbl_salary">給料</span> <span class = "spn_salary" ><%= t_joboffer.minsalary %> ~ <%= t_joboffer.maxsalary %> </span>
+        </li>
+        <li class="p_job_description"><p><%= t_joboffer.description %></p></li>
+        <li class="job_category">
+          <span class ="lbl_category">職種：</span> <span class = "spn_category" ><%= t_joboffer.category %> </span>
+        </li>
+        
+        <div class="columns">
+          <div class="field column is-10">
+            <li class="job_skills">
+            <% t_joboffer.skills.split('- ').each do |s| %>
+              <% if s!='-' and s !='---' and s!='--' and s!='  ' and !s.blank? %>
+                
+                <span class="lbl_skills"><%= s %></span>
+                
+              <% end %>
+            <% end %>
+            </li>        
+          </div>
+          <% if signed_in_jobseeker? %>
+            <div class="field column is2">
+              <li class="btn_view_work"><%= link_to '募集書の詳細を見る',t_joboffer_path(t_joboffer.id), :id => "btn_view_work" %></li>          
+            </div>
+          <% end %>
+        </div>
+      </ul>
+    <% end %>
+    <div class="digg_pagination">
+      <%= will_paginate @t_joboffers, :prev_label => '<<', :next_label => '>>' %>   
+    </div>              
+  
+    <br />
+</div>
+
+<script>
+  $(document).ready(function(){
+    $(".js-example-placeholder-multiple").select2({
+      placeholder: "ーえらぶー"
+    });
+  });
+</script>

@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  employer_id: MyString
+  title: MyString
+  minsalary: MyString
+  maxsalary: MyString
+  location: MyString
+  skills: MyString
+  description: MyString
+  category: MyString
+
+two:
+  employer_id: MyString
+  title: MyString
+  minsalary: MyString
+  maxsalary: MyString
+  location: MyString
+  skills: MyString
+  description: MyString
+  category: MyString

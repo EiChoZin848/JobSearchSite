@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  jobseeker_id: 1
+  t_joboffers_id: 1
+
+two:
+  jobseeker_id: 1
+  t_joboffers_id: 1

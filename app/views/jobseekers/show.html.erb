@@ -1,0 +1,115 @@
+<div class = "show_jobseeker"> 
+  <div class="row">
+      <% if signed_in_jobseeker? %>
+        <% if ( current_jobseeker.id == @jobseeker.id) %>
+            <div class="column">
+                <div class="wrapper">  
+                  <% if @current_jobseeker.profile? %>        
+                    <%= image_tag @current_jobseeker.profile_url, :size => '150x150' %> 
+                  <% else %>
+                    <%= image_tag "/images/profile.png", :size => '150x150' %>
+                  <% end %>        
+                </div>
+            </div>
+      
+            <div class="column">
+              
+                <div class="user-wrapper">
+                    <h2 class="username"><%= current_jobseeker.name %>
+                    <%= link_to "<i class='fa fa-pencil-square-o' aria-hidden='true'></i>" ,edit_jobseeker_path %>
+                    </h2>
+                </div>
+                <ul class="posts">
+                  <div class="row">
+                    <% if @jobseeker.category? %>
+                    <div class="column"><li class="spn_category"><span id="spn_category"><%= @jobseeker.category %></span> </li></div>
+                    <% end %>
+                    <% if @jobseeker.location? %>
+                      <div class="column"><li class="spn_location"><i class="fa fa-map-marker location" aria-hidden="true"></i><span id="spn_location"><%= @jobseeker.location %></span> </li></div>
+                    <% end %>
+                  </div>
+                  <% if @jobseeker.skills? %>
+                    <div class="row">
+                    
+                    <li>
+                        <% @jobseeker.skills.split('- ').each do |s| %>
+                          <% if s!='-' and s !='---' and s!='--' and s!='  ' and !s.blank? %>
+                            <div class="column">
+                            <span class="spn_skills"><%= s %></span><br/>
+                            </div>
+                          <% end %>
+                        <% end %>
+                    </li>
+                    </div>
+                  <% end %>
+                </ul>
+            
+            </div>
+      <% end %>
+    </div>
+    <div class="row">
+      <% else %>
+        <div class="column">
+              <div class="wrapper">
+                <% if @jobseeker.profile? %>        
+                  <%= image_tag @jobseeker.profile_url, :size => '150x150' %>    
+                <% else %>
+                  <%= image_tag "/images/profile.png", :size => '150x150' %> 
+                <% end %>             
+              </div>
+        </div>
+        <div class="column">
+          <div class="user-wrapper">
+            <h2 class="username"><%= @jobseeker.name %></h2>
+          </div>
+          <ul class="posts">
+            <div class="row">
+              <div class="column"><li class="spn_category"><span id="spn_category"><%= @jobseeker.category %></span> </li></div>
+          
+              <div class="column"><li class="spn_location"><i class="fa fa-map-marker location" aria-hidden="true"></i><span id="spn_location"><%= @jobseeker.location %></span> </li></div>
+            </div>
+            <div class="row">
+            <li>
+              <% @jobseeker.skills.split('- ').each do |s| %>
+                <% if s!='-' and s !='---' and s!='--' and s!='  ' and !s.blank? %>
+                  <div class="column">
+                  <span class="spn_skills"><%= s %></span><br/>
+                  </div>
+                <% end %>
+              <% end %>
+            </li>
+            </div>
+          </ul>
+          
+        </div>       
+      <% end %>
+  </div>
+
+
+  <div class="about">
+    <h2>自己紹介</h2>
+    <p id="p_about"><%= @jobseeker.about %></p>
+  </div>
+  <div class="contact">
+    <h2>連絡先住所</h2>
+    <p><i class="fa fa-phone-square phone" aria-hidden="true"></i><%= @jobseeker.phone %></p>
+    <p><i class="fa fa-envelope email" aria-hidden="true"></i><%= @jobseeker.email %></p>
+  </div>
+  <div class="recent_work">
+    <h2>最近の求人</h2>
+
+    <% @already_applied.each do |applied_job| %>
+      <% @t_joboffers.each do |t_joboffer| %>
+        <% if applied_job.t_joboffers_id == t_joboffer.id %>
+          <%= link_to t_joboffer.title, t_joboffer_path(t_joboffer) , :class => " ", :id => "" %><br />
+        <% end %>
+      <% end %>
+    <% end %>
+    <% if @already_applied.present? and @already_applied.count>0  %>
+      <div class="jobseeker_pagination">
+        <%= will_paginate @already_applied, :prev_label => '<<', :next_label => '>>' %>   
+      </div>
+    <% end %>
+  </div>
+
+</div>

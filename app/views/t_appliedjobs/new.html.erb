@@ -1,0 +1,19 @@
+<h1>New t_appliedjob</h1>
+
+<% form_for(@t_appliedjob) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :jobseeker_id %><br />
+    <%= f.text_field :jobseeker_id %>
+  </p>
+  <p>
+    <%= f.label :t_joboffers_id %><br />
+    <%= f.text_field :t_joboffers_id %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', t_appliedjobs_path %>

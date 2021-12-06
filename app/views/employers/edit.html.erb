@@ -1,0 +1,50 @@
+<div class="form-upload ibox-content edit_employer" >
+  <h3 class="employer_profile">プロフィールの編集</h3>
+
+  <% form_for @employer, :html => { :multipart => true } do |f| -%>
+    <%= f.error_messages %>
+
+
+    <div class="form-group m-t">
+      <%= f.label '雇用主名前:' %><br />
+      <%= f.text_field :name, :class => "inputform" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label '電話番号:' %><br />
+      <%= f.text_field :phone, :class => "inputform" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label '住所：' %><br />
+      <%= f.text_field :address, :class => "inputform" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label '勤務地：' %><br />
+      <%= f.select :location, options_for_select( @locations.collect {|c| [c.city, c.city]}),  :prompt=> "ーえらぶー", :class => "inputform" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label '自己紹介：' %><br />
+      <%= f.text_area :info, :class => "inputform"%>
+    </div>
+
+    <div class="form-group">
+      <%= f.label 'プロフィールの写真：' %><br />
+      <% if @employer.profile? %>        
+        <%= image_tag @employer.profile_url, :size => "100x100" %>  
+      <% else %>
+        <%= image_tag "/images/profile.png", :size => '100x100' %>
+      <% end %> <br />
+      <%= f.file_field :profile, :id => "file" %>
+    </div>
+
+
+    
+    <div class="form-group"><%= f.submit "更新", :class=>"btn_update" %></div>
+  <% end -%>
+
+
+</div>
+

@@ -1,0 +1,59 @@
+
+  <% flash.each do |key, value| %>
+    <div class="flash <%= key %>"><%= value %></div>
+  <% end %>
+<div class="home" style="min-height: 300px"　>
+
+  <div class="home ">
+            <center><h3>やりがいのある作業を検索</h3>
+                <br />
+                <p>ジョプ検索サイトでより多くの収入を得ることができます。より多くの雇用見つけるのに最適な場所です。<br />
+                雇用は何百ものスキルで作業を投稿し、素晴らしい作業に値するお金を払っています。
+                <p>
+
+            </center>
+            <br />
+            <center> 
+                <%= link_to "求人の検索", search_job_path , :class=>"button search", :id=>"search" %>
+            </center>
+  </div>
+</div>
+
+
+<div class="colpg" style="min-height: 350px">
+  <div class="row">
+    <div class="column">
+      <center>
+        <div class="user-search">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </div>
+      <h3>検索</h3></center>
+      <p>あなたのスキルに会ったプロジェクトを閲覧し、<br />提案を提出してください。
+         <%= link_to "あなたのプロフィールを完成させる", new_jobseeker_path, :id=>"user-search" %>
+          だけで、クライアントに雇われるづしょう。</p>
+    </div>
+    <div class="column">
+      <center>
+        <div class="user-hire">
+          <i class="fa fa-handshake-o" aria-hidden="true"></i>
+        </div>
+        <h3>雇う</h3>
+      </center>
+      <p>求人を投稿すると、数分以内に提案が届きます。お気に入りのフリーランサーを雇って、プロジェクトを始めましょう。
+         <%= link_to "あなたの作業を投稿するためにサインアップしてください。", new_employer_path , :id=>"user-hire" %>
+      </p>
+    </div>
+    <div class="column">
+      <center>
+        <div class="user-briefcase">
+          <i class="fa fa-briefcase" aria-hidden="true"></i>
+        </div>
+        <h3>求人</h3>
+      </center>
+      <p>働き方を自由にコントロールできます。ジョプ検索サイトを使用するすると、連絡先を共有したり、直接通信したりできます。<br /><br />
+      </p>
+    </div>
+    
+  </div>
+</div>
+

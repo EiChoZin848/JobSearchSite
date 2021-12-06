@@ -1,0 +1,22 @@
+
+<div class="ibox-content sign_in" style="min-height: 500px">
+  <h3>パスワードをお忘れですか</h3>
+  <p>パスワードをリセットするためのメールを送信できるように、メールアドレスを入力してください。</p>
+
+  <% form_for(:password_reset_tokens, :url => password_reset_tokens_path) do |f| %>
+
+    <% flash.each do |key, value| %>
+        <div class="flash <%= key %>"><%= value %></div>
+    <% end %>
+
+    <div class="form-group m-t">
+      <%= f.label 'メール:' %><br />
+      <%= f.text_field :email, :class => "inputform" , :maxlength => 50 %>
+    </div>
+
+
+    <div class="form-group"><%= f.submit "送信", :class=>"btn_send" %></div>
+
+  <% end %>
+  
+</div>

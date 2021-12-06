@@ -1,0 +1,103 @@
+
+
+
+<div class=" joboffer" style="min-height: 500px">
+  <% form_tag jobseekers_path, :method => :get do %>  
+    
+    <div class="searchjob">
+      <p class="h3_searchjob">求職者の検索</p>
+    </div>
+    <div class="searchjobbox">
+
+
+      <div class="form-group m-t">
+        <div class="columns">
+          <div class="field column is-2">
+            <label>職種：</label>
+          </div>
+          <div class="field column is-12">
+            <%= select_tag :category, options_for_select([["ーえらぶー", "-"]] + @categories.collect {|c| [c.title, c.title]}), :prompt => "Select a Category", :class => "inputform select_city" %>
+          </div>
+        </div>
+      </div>
+      <div class="form-group m-t">
+        <div class="columns">
+          <div class="field column is-2">
+            <label>業務場所：</label>
+          </div>
+          <div class="field column is-12">
+            <%= select_tag :location, options_for_select([["ーえらぶー", "-"]] + @locations.collect {|c| [c.city, c.city]}), :prompt => "ーえらぶー" , :class => "inputform select_city" %>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="columns">
+          <div class="field column is-2">
+            <label>スキル：</label>
+          </div>
+          <div class="field column is-12">
+            <%= select_tag :skills, options_for_select([["ーえらぶー", "-"]] + @skills.map {|c| [c.title, c.title] }),  :prompt => "ーえらぶー", :class => "inputform select_skill" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+          <div class="columns">
+            <div class="field column is-2">
+            </div>
+            <div class ="field column">
+              <%= submit_tag "検索", :class=>" btn_search" %><%= submit_tag "リセット", :class=>"btn_reset" %>
+            </div>
+          </div>
+        </div>
+      </div>
+  <% end %>
+
+  <div class="lbl_number_of_job">
+    <%= @jobseekers.total_entries %> 求職者が見つかりました。
+  </div>
+
+  
+    <% @jobseekers.each do |jobseeker| %>
+      <div class="employerlist">
+        <div class="columns">
+
+          <div class="field column is-2 ">
+
+              <% if jobseeker.profile? %>        
+                  <%= image_tag jobseeker.profile_url, :size => '150x150' %> 
+              <% else %>
+                  <%= image_tag "/images/profile.png", :size => '150x150' %>
+              <% end %>
+              <% if signed_in_employer? %>  
+                <span class="btn_view_profile"><%= link_to 'プロフィールを見る', jobseeker_path(jobseeker.id), :id => "btn_view_profile" %></span>          
+              <% end %>
+          </div>
+          <div class="field column is-8">
+
+              <div class="row lbl_jobseeker_name"><span id=""><%= jobseeker.name %></span> </div>
+           
+                <% if jobseeker.skills? %>
+                  <div class="row employer_skill">                                      
+                    <% jobseeker.skills.split('- ').each do |s| %>
+                      <% if s!='-' and s !='---' and s!='--' and s!='  ' and !s.blank? %>
+                       
+                        <span class="employer_spn_skill"><%= s %></span>
+                        
+                      <% end %>
+                    <% end %>
+                  </div>
+                <% end %>
+              
+              <div class="p_about"><%= jobseeker.about %></div>     
+                  
+          </div>       
+        </div>
+      
+       
+      </div>
+    <% end %>
+    <div class="jobseeker_pagination">
+      <%= will_paginate @jobseekers, :prev_label => '<<', :next_label => '>>' %>   
+    </div>
+</div>

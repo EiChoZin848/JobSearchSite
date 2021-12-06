@@ -1,0 +1,49 @@
+<div class="ibox-content sign_in" style="min-height: 500px">
+  <h3>パスワードをお忘れですか</h3>
+  <p>パスワードをリセットするためのメールを送信できるように、メールアドレスを入力してください。</p>
+
+  <% if params[:email] == @employer.email %>
+    <% form_for(@employer, :url => password_reset_token_path(params[:id])) do |f| %>
+
+      
+      <div class="form-group m-t">
+        <%= hidden_field_tag :email, @employer.email %>
+        <%= hidden_field_tag  :test,  "1"  %>
+      </div>
+
+      <div class="form-group m-t">
+          <%= f.label '新しいパスワード：' %><br />
+          <%= f.password_field :password, :class => "inputform", :maxlength => 20 %>
+      </div>
+
+      <div class="form-group m-t">
+          <%= f.label '確認の新しいパスワード：' %><br />
+          <%= f.password_field :password_confirmation, :class => "inputform", :maxlength => 20 %>
+      </div>
+      <div class="form-group"><%= f.submit "変更", :class=>"btn_signin" %></div>
+
+    <% end %>
+  <% elsif  params[:email]== @jobseeker.email %>
+    <% form_for(@jobseeker, :url => password_reset_token_path(params[:id])) do |f| %>
+
+     
+      <div class="form-group m-t">
+        <%= hidden_field_tag :email, @jobseeker.email %>
+        <%= hidden_field_tag :test , "2" %>
+      </div>
+
+      <div class="form-group m-t">
+          <%= f.label '新しいパスワード：' %><br />
+          <%= f.password_field :password, :class => "inputform", :maxlength => 20 %>
+      </div>
+
+      <div class="form-group m-t">
+          <%= f.label '確認の新しいパスワード：' %><br />
+          <%= f.password_field :password_confirmation, :class => "inputform", :maxlength => 20 %>
+      </div>
+      <div class="form-group"><%= f.submit "変更", :class=>"btn_signin" %></div>
+
+    <% end %>
+  <% end %>
+
+</div>

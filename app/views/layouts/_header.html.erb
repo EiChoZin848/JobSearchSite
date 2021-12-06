@@ -1,0 +1,30 @@
+<nav class="navbar is-light" role="navigation" aria-label="main navigation" >
+
+    <div class="navbar-brand lbl_jobsearchsite">        
+        <%= link_to 'ジョプ検索サイト', root_path, :class => "navbar-item is-dark job",  :id=>"logo" %>
+    </div>
+    <ul class="navbar-brand navbar-end pull-right is-light lbl_header_right">
+        
+        <li><%= link_to 'ホーム', root_path, :class => "navbar-item is-dark", :id => "header_link" %></li>
+
+        <% if signed_in? %>
+            <li><%= link_to "求人の検索", '#', :class => "navbar-item ", :id => "header_link" %></li>
+            <li><%= link_to "求職者の検索", '#', :class => "navbar-item ", :id => "header_link" %></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Account <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><%= link_to "Profile", current_jobseeker %></li>
+                    <li><%= link_to "Edit Profile", "#" %></li>
+                    <li><%= link_to "Sign out", sign_out_path, :method => :delete %></li>
+                </ul>
+            </li>
+        <% else %>
+            <li><%= link_to "サインアップ", 'sign_up_path', :class => "navbar-item ", :id => "header_link" %></li>
+            <li><%= link_to "サインイン", 'sign_in_path', :class => "navbar-item ", :id => "header_link" %></li>
+        
+        <% end %>
+    </ul>
+
+</nav>

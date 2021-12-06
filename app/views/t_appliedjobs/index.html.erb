@@ -1,0 +1,22 @@
+<h1>Listing t_appliedjobs</h1>
+
+<table>
+  <tr>
+    <th>Jobseeker</th>
+    <th>T joboffers</th>
+  </tr>
+
+<% @t_appliedjobs.each do |t_appliedjob| %>
+  <tr>
+    <td><%=h t_appliedjob.jobseeker_id %></td>
+    <td><%=h t_appliedjob.t_joboffers_id %></td>
+    <td><%= link_to 'Show', t_appliedjob %></td>
+    <td><%= link_to 'Edit', edit_t_appliedjob_path(t_appliedjob) %></td>
+    <td><%= link_to 'Destroy', t_appliedjob, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New t_appliedjob', new_t_appliedjob_path %>

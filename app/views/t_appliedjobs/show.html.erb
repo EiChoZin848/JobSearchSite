@@ -1,0 +1,13 @@
+<p>
+  <b>Jobseeker:</b>
+  <%=h @t_appliedjob.jobseeker_id %>
+</p>
+
+<p>
+  <b>T joboffers:</b>
+  <%=h @t_appliedjob.t_joboffers_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_t_appliedjob_path(@t_appliedjob) %> |
+<%= link_to 'Back', t_appliedjobs_path %>

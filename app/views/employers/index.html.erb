@@ -1,0 +1,28 @@
+<h1>Listing employers</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Address</th>
+    <th>Info</th>
+  </tr>
+
+<% @employers.each do |employer| %>
+  <tr>
+    <td><%=h employer.name %></td>
+    <td><%=h employer.email %></td>
+    <td><%=h employer.phone %></td>
+    <td><%=h employer.address %></td>
+    <td><%=h employer.info %></td>
+    <td><%= link_to 'Show', employer %></td>
+    <td><%= link_to 'Edit', edit_employer_path(employer) %></td>
+    <td><%= link_to 'Destroy', employer, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New employer', new_employer_path %>

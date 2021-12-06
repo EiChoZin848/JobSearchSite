@@ -1,0 +1,39 @@
+<div class="ibox-content sign_up_employer" style="min-height: 500px">
+  <h3 class="lbl_employer_sign_up">無料の雇用主アカウントを作成する</h3>
+  <p>求人を探していますか。
+  <%= link_to "求職者として登録する。", new_jobseeker_path , :id=>"lnk_employer_signup" %>
+  </p>
+
+  <% form_for(@employer) do |f| -%>
+
+    <%= render 'shared/error_messages_employer' %>
+    
+    <div class="form-group m-t">
+      <%= f.label '名前:' %><span class="star"> * </span><br />
+      <%= f.text_field :name, :class => "inputform", :maxlength => 30 %>
+    </div>
+    
+    <div class="form-group m-t">
+      <%= f.label 'メール:' %><span class="star"> * </span><br />
+      <%= f.text_field :email, :class => "inputform", :maxlength => 50 %>
+    </div>
+
+    <div class="form-group m-t">
+      <%= f.label '電話番号:' %><span class="star"> * </span><br />
+      <%= f.text_field :phone, :class => "inputform", :maxlength => 20 %>
+    </div>
+
+    <div class="form-group"> 
+      <%= f.label 'パスワード:' %><span class="star"> * </span><br />
+      <%= f.password_field :password, :class => "inputform", :maxlength => 20 %>
+    </div>
+
+    <div class="form-group"> 
+      <%= f.label '確認のパスワード：' %><span class="star"> * </span><br />
+      <%= f.password_field :password_confirmation, :class => "inputform", :maxlength => 20 %>
+    </div>
+
+    <div class="form-group"><%= f.submit "登録", :class=>"btn_signup" %></div>
+  <% end -%>
+
+</div>

@@ -1,0 +1,44 @@
+<h1>Editing t_joboffer</h1>
+
+<% form_for(@t_joboffer) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :employer_id %><br />
+    <%= f.text_field :employer_id %>
+  </p>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :minsalary %><br />
+    <%= f.text_field :minsalary %>
+  </p>
+  <p>
+    <%= f.label :maxsalary %><br />
+    <%= f.text_field :maxsalary %>
+  </p>
+  <p>
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+  </p>
+  <p>
+    <%= f.label :skills %><br />
+    <%= f.text_field :skills %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.label :category %><br />
+    <%= f.text_field :category %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @t_joboffer %> |
+<%= link_to 'Back', t_joboffers_path %>

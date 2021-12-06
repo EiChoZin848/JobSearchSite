@@ -1,0 +1,1452 @@
+ require select2
+html{
+  font-family: ＭＳ Ｐ明朝;
+}
+body{
+  background: #ffffff;
+}
+.star{
+  color: #FF7373;
+  font: 1rem ＭＳ Ｐ明朝;
+}
+.homepage{
+  padding-top: 65px;
+  padding-bottom: 65px;
+}
+.home{
+ 
+  background-image: url('/images/img_job.png');
+  background-size: cover;
+  height: 200px;
+  color: black;
+  font-style: bold;  
+}
+.home h3{
+  padding-top: 30px;
+  
+  font-style: bold;
+  font: 3rem ＭＳ Ｐ明朝;
+  font-weight: bold;
+ 
+  color: #2b497d;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.home p{
+  font: 1.7rem ＭＳ Ｐ明朝;
+  color: #2b497d;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+#search{
+  color: black;
+  background-color: #5b80cb;
+  font-size: 16px;
+  font: 2rem ＭＳ Ｐ明朝;
+  font-weight: bold;
+  border-radius: 10px;
+  
+}
+#search:hover{
+  color: goldenrod;
+  background: #4768a5;
+  font-weight: bolder;
+}
+/* Header Style */
+
+.lbl_jobsearchsite {
+  background-color: black;
+  font-style: bold;
+  font: 2rem ＭＳ Ｐ明朝;
+  width: 250px;
+}
+.lbl_header_right{
+  width: auto;
+}
+#logo{
+  font-weight: bold;
+  color:white;
+  text-shadow: -1px 0 white, 0 1px black, 1px 0 black, 0 -1px black;
+ 
+}
+#logo:hover{
+  color:goldenrod;
+  background: black;
+
+}
+#header_link{
+  font-weight: bold;
+}
+#header_link:hover{
+  color: black;
+  background: #cacaca;
+  font-weight: bolder;
+}
+.header_link{
+  font-weight: bold;
+}
+.header_link:hover{
+  color: black;
+  background: #cacaca;
+  font-weight: bolder;
+}
+.dropdown_link{
+  font-weight: bold;
+  background: #d0d0d0 ;
+}
+.dropdown_link:hover{
+  color: black;
+  background: #a1a1a1;
+  font-weight: bolder;
+}
+#dropdown_link{
+  font-weight: bold;
+}
+#dropdown_link:hover{
+  color: black;
+  background: #a1a1a1;
+  font-weight: bolder;
+}
+#user_name{
+  font-weight: bold;
+  color: #c55a11;
+}
+#user_name:hover{
+  font-weight: bolder;
+}
+/* Header */
+
+.header {
+  background: none repeat scroll 0 0 ;
+  border-top: 1px solid #e7eaec;
+  top: 0%;
+  left: 0%;
+  margin-bottom: 130px;
+
+  position: fixed;
+  right: 0;
+}
+.header.fixed_full {
+  position: fixed;
+  top: 0%;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  
+  border-top: 1px solid #e7eaec;
+}
+.header.fixed {
+  position: fixed;
+  top: 0%;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+
+ 
+  border-top: 1px solid #e7eaec;
+  margin-left: 0px;
+}
+/* FOOTER */
+#foot{
+  background: #8c8c8c;
+  padding-top: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  height: 50px;
+  
+}
+.foot_text{
+  padding-top: 30px;
+}
+.footer {
+  background: none repeat scroll 0 0 white;
+
+  bottom: 0%;
+  left: 0%;
+
+  text-align: center;
+  position: fixed;
+  right: 0;
+}
+.footer.fixed_full {
+  position: fixed;
+  bottom: 0%;
+  top:100%;
+  left: 50%;
+  right: 0;
+  z-index: 2000;
+  
+  background: white;
+  border-top: 1px solid #e7eaec;
+}
+.footer.fixed {
+  position: fixed;
+  bottom: 0%;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  
+  background: white;
+  border-top: 1px solid #e7eaec;
+  margin-left: 0px;
+  
+}
+
+/* Column */
+.colpg{
+  margin-top: 10px;
+}
+.colpg .column {
+  float: left;
+  width: 33.33%;
+
+  /*border: 2px solid red;*/
+  padding-left: 20px;
+}
+.column h3{
+  font-style: bold;
+  font: 2.5rem ＭＳ Ｐ明朝;
+  font-weight: bold;
+ 
+  color: black;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+ .column p{
+  font: 1.5em ＭＳ Ｐ明朝;
+  color: black;
+  text-shadow: -1px 0 black, 0 1px black;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.user-search {
+  width: 110px;
+}
+.user-search i.fa{
+  font-size: 90px;
+  color: #000000d4;
+  
+  width: 130px;
+  height: 105px;
+  border: 1px solid black;
+  border-radius: 55%;
+  background-color: #f7f7f7;
+}
+#user-search:hover{
+  color: goldenrod;
+  font-weight: bolder;
+}
+.user-hire {
+  width: 110px;
+}
+.user-hire i.fa{
+  font-size: 90px;
+  color: #000000d4;
+  width: 130px;
+  height: 105px;
+  border: 1px solid black;
+  border-radius: 55%;
+  background-color: #f7f7f7;
+}
+#user-hire, #user-search{
+  text-decoration: underline;
+}
+#user-hire:hover{
+  color: goldenrod;
+  font-weight: bolder;
+  text-decoration: underline !important;
+}
+.user-briefcase i.fa{
+  font-size: 95px;
+  color: #000000d4;
+  padding-top: 10px;
+  width: 130px;
+  height: 105px;
+
+}
+
+/*Sign up */
+.sign_up_employer{
+  padding-top: 65px;
+}
+.lbl_employer_sign_up{
+  padding-top: 20px;
+}
+.sign_up_jobseeker{
+  padding-top: 65px;
+}
+.lbl_jobseeker_sign_up{
+  padding-top: 20px;
+}
+.sign_up_screen{
+  padding-top: 65px;
+}
+.sign_up{
+  margin-top: 50px;
+}
+.sign_up{
+  padding-top: 20px;
+  font-style: bold;
+  font: 2.5rem ＭＳ Ｐ明朝; 
+  color: black;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.sign_up_col {
+  float: left;
+  margin-left: 10%;
+  width: 50%;
+  /*border: 2px solid red;*/
+  padding-left: 20px;
+  padding-top: 50px;
+}
+.search2{
+  margin-left: 10%;
+}
+.sign_up_col .column .lbl_searchjob{
+
+  font-style: bold;
+  font: 2.2rem ＭＳ Ｐ明朝; 
+  color: black;
+  text-shadow: -1px 0 black, 0 1px black;
+}
+.sign_up_col .lbl_searchjobseeker{
+
+  font-style: bold;
+  font: 2.2rem ＭＳ Ｐ明朝; 
+  color: black;
+  text-shadow: -1px 0 black, 0 1px black;
+
+}
+#lnk_employer_signup:hover{
+  color: goldenrod;
+  font-weight: bolder;
+}
+#lnk_jobseeker_signup:hover{
+  color: goldenrod;
+  font-weight: bolder;
+}
+.btn_registerforwork{
+  font-style: bold;
+  font: 1.5rem ＭＳ Ｐ明朝;
+  padding-top: 20px;  
+}
+.column #btn_registerforwork{
+  color: white;
+  background-color: #00b050;
+  font-size: 14px;
+  font: 1.5rem ＭＳ Ｐ明朝;
+  text-shadow: -0.5px 0 white;
+  font-weight: bold;
+  border-radius: 5px;
+  left: 35%;
+  border: 1px solid #4472c4;
+}
+.column #btn_registerforwork:hover{
+  color: goldenrod;
+  background: #398a39;
+  font-weight: bolder;
+}
+.btn_registertohire{
+  font-style: bold;
+  font: 1.5rem ＭＳ Ｐ明朝;
+  padding-top: 20px;  
+}
+.column #btn_registertohire{
+  color: white;
+  background-color: #00b050;
+  font-size: 14px;
+  font: 1.5rem ＭＳ Ｐ明朝;
+  text-shadow: -0.5px 0 white;
+  font-weight: bold;
+  border-radius: 5px;
+  left: 35%;
+  border: 1px solid #4472c4;
+}
+.column #btn_registertohire:hover{
+  color: goldenrod;
+  background: #398a39;
+  font-weight: bolder;
+}
+/* Sign in */
+.ibox-content{
+  border-top: none;
+  padding-left: 17%;
+}
+.resizable-panels .ibox {
+  clear: none;
+  margin: 10px;
+  float: left;
+  overflow: hidden;
+  min-height: 150px;
+  min-width: 150px;
+}
+
+.ibox-content h1,
+.ibox-content h2,
+.ibox-content h4,
+.ibox-content h5,
+.ibox-title h1,
+.ibox-title h2,
+.ibox-title h3,
+.ibox-title h4,
+.ibox-title h5 {
+
+margin-left: 12%;
+margin-bottom: 20px;
+}
+.ibox-content h3{
+  
+  /*margin-left: 5%;*/
+
+  color: black;
+  font-weight: bolder;
+  text-shadow: 1px 0 black, 0 1px black;
+  font: 2rem ＭＳ Ｐ明朝;
+  font-size: 35px;
+}
+.ibox-content p{
+  margin-bottom: 20px;
+  color: black;
+  text-shadow: -0.5px 0 black;
+  font:  ＭＳ Ｐ明朝;
+  font-size: 18px;
+}
+
+.ibox {
+  clear: both;
+  
+  margin-top: 0;
+  padding: 0;
+  display: inline-block;
+  margin-left: 50%;
+
+}
+
+.ibox-content {
+  background-color: #ffffff;
+  color: inherit;
+  padding-bottom: 30px;
+  width: 100%;
+  font: ＭＳ Ｐ明朝;
+  
+}
+
+.ibox-content {
+  clear: both;
+}
+.ibox-heading {
+  background-color: #f3f6fb;
+  border-bottom: none;
+}
+.ibox-heading h3 {
+  font-weight: 200;
+  font-size: 1.8rem;
+  color: black;
+}
+.ibox-title h5 {
+  display: inline-block;
+  font-size: 14px;
+  
+  padding: 0;
+  text-overflow: ellipsis;
+  
+}
+.ibox-title .label {
+  float: left;
+  margin-left: 4px;
+
+}
+.ibox-tools {
+  display: block;
+  float: none;
+  margin-top: 0;
+  position: relative;
+  padding: 0;
+  text-align: right;
+}
+.ibox-tools a {
+  cursor: pointer;
+  margin-left: 5px;
+  color: #c4c4c4;
+}
+.ibox-tools a.btn-primary {
+  color: #fff;
+}
+
+.ibox.fullscreen {
+  z-index: 2030;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  margin-bottom: 0;
+}
+/* forms */
+
+.inputform , select{
+  border: 1px solid #bbb;
+  width: 47%;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+#inputform select{
+  border: 1px solid #bbb;
+  
+  margin-bottom: 30px;
+  border-radius: 5px;
+}
+#file{
+  width: 47%;
+  height: 40px;
+  border: none !important;
+}
+input, select {
+  height: 35px !important;
+}
+
+div.form-group{
+  margin-top: 10px;
+  font-weight: bold;
+  font: 1.3rem ＭＳ Ｐ明朝;
+  text-shadow: 1px 0 black;
+  margin-bottom: 15px;
+}
+
+
+.btn_signup{
+  font-style: bold;
+  font: 1.5rem ＭＳ Ｐ明朝;
+  width: 110px;
+  height: 45px !important;
+}
+.btn_signup{
+  color: black;
+  background-color: #00b050;
+  font-size: 14px;
+  font: 1.5rem ＭＳ Ｐ明朝;
+  text-shadow: -0.5px 0 black;
+  font-weight: bold;
+  border-radius: 5px;
+  left: 35%;
+  border: 1px solid #4472C4;
+}
+.btn_signup:hover{
+  color: goldenrod;
+  background: #398a39;
+  font-weight: bolder;
+}
+/* Edit Profile */
+select[multiple], select[size] {
+  height: auto;
+}
+.select2-hidden-accessible {
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  height: 1px!important;
+  margin: -1px!important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px!important;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+select {
+  text-transform: none;
+}
+select:-internal-list-box {
+  appearance: auto;
+  align-items: flex-start;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  vertical-align: text-bottom;
+  white-space: nowrap;
+  border-radius: 2px;
+}
+select {
+  -webkit-writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  color: -internal-light-dark(black, white);
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  appearance: auto;
+  box-sizing: border-box;
+  align-items: center;
+  white-space: pre;
+  -webkit-rtl-ordering: logical;
+  background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+  cursor: default;
+  margin: 0em;
+  border-width: 1px;
+  border-style: solid;
+  border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+  border-image: initial;
+  border-radius: 2px;
+}
+
+.btn_update{
+  font-style: bold;
+  font: 1.5rem ＭＳ Ｐ明朝;
+ 
+  height: 45px !important;
+}
+.btn_update{
+  color: white;
+  background-color: #00b050;
+  font-size: 14px;
+  font: 1.2rem ＭＳ Ｐ明朝;
+  text-shadow: -0.5px 0 white;
+  font-weight: bold;
+  border-radius: 5px;
+  left: 35%;
+  border: 1px solid #4472C4;
+  padding: 5px 10px;
+}
+.btn_update:hover{
+  color: goldenrod;
+  background: #398a39;
+  font-weight: bolder;
+}
+/* Form Error */
+#error_explanation {
+
+  width: 620px;
+    border: 2px solid red;
+    padding: 7px;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+}
+#error_explanation ul {
+  color: red;
+  margin: 0 0 30px 0;
+}
+
+.field_with_errors {
+  margin-top: 10px;
+  padding: 2px;
+  background-color: red;
+  display: table;
+
+  
+}
+.field_with_errors .form-control {
+  color: red;
+
+}
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+#error_explanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+ul.jobseekers{
+  margin-top: 1em;
+}
+.jobseekers li{
+  list-style: none;
+}
+.flash_msg{
+
+  height: 50px;
+  width: 600px;
+  margin-left: 20px;
+  
+  color: black;
+}
+/*Sign in */
+.sign_in{
+  padding-top: 5px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.h3_signin{
+
+  padding-left: 20%;
+  font-weight: bold;
+  font: 2.2rem ＭＳ Ｐ明朝; 
+  color: black;
+
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.btn_signin{
+  font-style: bold;
+  width: 120px;
+  height: 55px !important;
+}
+.btn_signin{
+  color: white;
+  background-color: #00b050;
+  font-size: 14px;
+  font: 1.2rem ＭＳ Ｐ明朝;
+  text-shadow: 0.5px 0 white;
+  font-weight: bold;
+  border-radius: 5px;
+  left: 35%;
+  border: 1px solid #4472C4;
+}
+.btn_signin:hover{
+  color: goldenrod;
+  background: #398a39;
+  font-weight: bolder;
+  border: 1px solid #91A153;
+}
+#forget_pw{
+  color: #4771BD;
+}
+#forget_pw:hover{
+  color: goldenrod;
+
+  font-weight: bolder;
+
+}
+p.register_link{
+  color: black;
+  font-weight: bold;
+  font: 1.1rem ＭＳ Ｐ明朝;
+}
+#register{
+  color: #3a60cc;
+  font: 1.1rem ＭＳ Ｐ明朝;
+  font-weight: bold;
+}
+#register:hover{
+  color: goldenrod;
+  font-weight: bolder;
+}
+
+/*Jobseeker show page */
+.edit_jobseeker{
+  padding-top: 10px;
+  margin-bottom: 30px;
+}
+
+.show_jobseeker{
+  padding-top: 5px;
+  padding-bottom: 30px;
+}
+
+.show_jobseeker .column {
+  float: left;
+
+
+  /*border: 2px solid red;*/
+  padding-left: 20px;
+}
+.column h2{
+  font-style: bold;
+  font: 1.5rem ＭＳ Ｐ明朝;
+  font-weight: bold;
+ 
+  color: black;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.posts .row .column{
+  padding-left: 0px;
+}
+.spn_category{
+  font-style: bold;
+  font: 1rem ＭＳ Ｐ明朝;
+  font-weight: bold;
+  background-color: #96bc83 ;
+  color: black;
+  padding: 5px 10px;
+  border: 1px solid #70AD47;
+}
+.spn_location{
+  margin-left: 5px;
+  font-style: bold;
+  font: 1rem ＭＳ Ｐ明朝;
+  font-weight: bold;
+  border: 1px solid #FFC000;
+  color: black;
+  background-color: #fed68a;
+  padding: 5px 10px;
+}
+.location{
+  padding-right: 5px;
+}
+.spn_skills{
+  color: white;
+  background-color: #4472c4;
+  font-style: bold;
+  font: 1rem ＭＳ Ｐ明朝;
+
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.about{
+  background-color: #fed68a;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+.about h2{
+  font-style: bold;
+  font: 1.3rem ＭＳ Ｐ明朝;
+  font-weight: bold;
+  color: black;
+  text-shadow: -0.7px 0 black;
+}
+.contact{
+  background-color: #fed68a;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+.contact h2{
+  font-style: bold;
+  font: 1.3rem ＭＳ Ｐ明朝;
+  font-weight: bold;
+  color: black;
+  text-shadow: -0.7px 0 black;
+}
+.phone{padding-right: 5px;}
+.email{padding-right: 5px;}
+
+.recent_work{
+  background-color: #fed68a;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+.recent_work h2{
+  font-style: bold;
+  font: 1.3rem ＭＳ Ｐ明朝;
+  font-weight: bold;
+  color: black;
+  text-shadow: -0.7px 0 black;
+}
+.edit_employer{
+  padding-top: 10px;
+}
+.employer_profile{
+  padding-top: 5px;
+}
+.show_employer{
+  padding-top: 5px;
+}
+.show_employer .column {
+  float: left;
+  /*border: 2px solid red;*/
+  padding-left: 20px;
+}
+.show_employer .username{
+  padding-left: 10px;
+}
+
+.jobseeker_pagination {
+ 
+  cursor: default;
+  width: 10em;
+
+
+  /* self-clearing method: */ }
+  .jobseeker_pagination a, .jobseeker_pagination span, .jobseeker_pagination em {
+    height: 2em;
+    font: 1rem ＭＳ Ｐ明朝;
+    padding: 0.5em 0.9em;
+    display: block;
+    float: left;
+    margin-right: 0px;
+    margin-bottom: 20px;
+   }
+  .jobseeker_pagination .disabled {
+    color: #000033;
+    border: 1px solid #2e6ab1; }
+  .jobseeker_pagination .current {
+    font-style: normal;
+   
+    background: #2e6ab1;
+    color: white;
+    border: 1px solid #2e6ab1; }
+  .jobseeker_pagination a {
+    text-decoration: none;
+    color: #105cb6;
+    border: 1px solid #2e6ab1; }
+    .jobseeker_pagination a:hover, .jobseeker_pagination a:focus {
+      color: #000033;
+      border-color: #000033; }
+  .jobseeker_pagination .page_info {
+    background: #2e6ab1;
+    color: white;
+    padding: 0.4em 0.6em;
+    width: 18em;
+
+    margin-bottom: 0.3em;
+    text-align: center; }
+    .jobseeker_pagination .page_info b {
+      color: #000033;
+      background: #6aa6ed;
+      padding: 0.1em 0.25em; }
+  .jobseeker_pagination:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  * html .jobseeker_pagination {
+    height: 1%; }
+  *:first-child + html .jobseeker_pagination {
+
+    overflow: hidden; 
+}
+/* Job offer*/
+
+.salary select  {
+  border: 1px solid #bbb;
+  width: 20%;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+.showjobbox{
+  margin-top: 10px;
+  
+}
+.jobtitle{
+  background-color: #fed68a;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 15%;
+  border: 1px solid orange;
+  font: 1.3rem ＭＳ Ｐ明朝;
+  font-weight: bold;
+  color: black;
+}
+.category{
+  background-color: #70ad47;
+  font: 1rem ＭＳ Ｐ明朝;
+  color: white;
+
+  padding-left: 10px;
+  padding-bottom: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  text-align: center;
+  border: 1px solid gray;
+  float: left;
+  border-radius: 7px;
+ 
+}
+.show_salary{
+  border: 1px solid #ff8f9f;
+  width: 150px;
+  height: 40px;
+  float: left;
+  background-color: #f5ae91;
+  border-radius: 7px;
+
+}
+.show_job{
+  background-color: #ffdf7f;
+  padding-top: 10px;
+  margin-right: 15%;
+  font: 1rem ＭＳ Ｐ明朝;
+  color: black;
+}
+.btn_delete{
+  background-color: #95a7d8;
+  font: 1rem ＭＳ Ｐ明朝;
+  color: black;
+
+  padding: 20px 20px;
+
+  margin-right: 10px;
+  text-align: center;
+  border: 1px solid #889ed7;
+  float: right;
+  border-radius: 7px;
+}
+#btn_delete{
+  color: black;
+}
+.btn_submit{
+  background-color: #f57e30;
+  font: 1rem ＭＳ Ｐ明朝;
+  color: black;
+
+  padding-left: 25px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+ 
+  margin-right: 10px;
+  text-align: center;
+  border: 1px solid #e46e20;
+  float: right;
+  border-radius: 5px;
+}
+.btn_submit:hover{
+  color: goldenrod;
+  background: #eb7a2e;
+  font-weight: bolder;
+  border: 1px solid rgb(187, 94, 31);
+}
+#btn_submit{
+  color: black;
+}
+.btn_disable{
+  background-color: #f57e30;
+  font: 1rem ＭＳ Ｐ明朝;
+  color: black;
+
+  padding-left: 25px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+ 
+  margin-right: 10px;
+  text-align: center;
+  border: 1px solid #e46e20;
+  float: right;
+  border-radius: 5px;
+}
+.show_employername{
+  background-color: #ffdf7f;
+  margin-right: 15%;
+  font: 1rem ＭＳ Ｐ明朝;
+  color: black;
+}
+.lbl_employername{
+  font-weight: bold;
+  float: left;
+  font: 1rem ＭＳ Ｐ明朝;
+  text-shadow: -1px 0 black;
+}
+.spn_employername{
+  float: left;
+  color: blue;
+  font-weight:bold;
+}
+.show_skill{
+  background-color: #ffdf7f;
+  padding-bottom: 10px;
+  margin-right: 15%;
+  font: 1rem ＭＳ Ｐ明朝;
+  
+  border: 1px solid black;
+}
+.show_description{
+  background-color: #ffdf7f;
+  padding-bottom: 1px;
+  margin-right: 15%;
+  font: 1rem ＭＳ Ｐ明朝;
+}
+.lbl_description{
+  font-weight: bold;
+  color: black;
+  font: 1rem ＭＳ Ｐ明朝;
+  text-shadow: -1px 0 black;
+}
+.spn_posted_datetime{
+  float: right;
+}
+.spn_description{
+  float: left;
+  border: 1px solid black;
+  color: black;
+  width: 100%;
+}
+.time{
+
+  color: #7f7f7f;
+  font-weight: bold;
+
+}
+.lbl_skill{
+  font: 1rem ＭＳ Ｐ明朝;
+  text-shadow: 0.5px 0 black;
+ font-weight: bold;
+ color: black;
+}
+
+.spn_skill{ 
+  margin-left: 5px;
+ float: left; 
+
+ padding: 5px 7px;
+ text-align: center;
+}
+.spn_jobskills{
+  
+  color: white;
+  background-color: #4472c4;
+  border: 1px solid gray;
+  font-style: bold;
+  font: 1rem ＭＳ Ｐ明朝;
+  margin-right: 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.show_skill .label{
+  color: white;
+  font-size: 12px;
+}
+/* Password Reset */
+.chk_rememberme{
+  margin-top: 20px;
+ 
+  
+}
+.lbl_rememberme{
+  font: 1rem ＭＳ Ｐ明朝;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  
+  
+}
+.btn_send{
+  font-style: bold;
+  width: 100px;
+  height: 45px !important;
+}
+.btn_send{
+  color: white;
+  background-color: #00b050;
+  font-size: 14px;
+  font: 1.2rem ＭＳ Ｐ明朝;
+  text-shadow: -0.5px 0 white;
+  font-weight: bold;
+  border-radius: 5px;
+  left: 35%;
+  border: 1px solid #4472C4;
+}
+.btn_send:hover{
+  color: goldenrod;
+  background: #398a39;
+  font-weight: bolder;
+  border: 1px solid #91A153;
+}
+/* Job offer Pagination */
+.digg_pagination {
+ 
+  cursor: default;
+  width: 10em;
+
+
+  /* self-clearing method: */ }
+  .digg_pagination a, .digg_pagination span, .digg_pagination em {
+    height: 2em;
+    font: 1rem ＭＳ Ｐ明朝;
+    padding: 0.5em 0.8em;
+    display: block;
+    float: left;
+    margin-right: 0px;
+    margin-bottom: 20px;
+   }
+  .digg_pagination .disabled {
+    color: #000033;
+    border: 1px solid #2e6ab1; }
+  .digg_pagination .current {
+    font-style: normal;
+   
+    background: #2e6ab1;
+    color: white;
+    border: 1px solid #2e6ab1; }
+  .digg_pagination a {
+    text-decoration: none;
+    color: #105cb6;
+    border: 1px solid #2e6ab1; }
+    .digg_pagination a:hover, .digg_pagination a:focus {
+      color: #000033;
+      border-color: #000033; }
+  .digg_pagination .page_info {
+    background: #2e6ab1;
+    color: white;
+    padding: 0.4em 0.6em;
+    width: 18em;
+
+    margin-bottom: 0.3em;
+    text-align: center; }
+    .digg_pagination .page_info b {
+      color: #000033;
+      background: #6aa6ed;
+      padding: 0.1em 0.25em; }
+  .digg_pagination:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  * html .digg_pagination {
+    height: 1%; }
+  *:first-child + html .digg_pagination {
+
+    overflow: hidden; 
+}
+/* Job Search */
+.tantan{
+  margin-left: 60px;
+  
+}
+.lbl_number_of_job{
+
+  background-color: #F5B397;
+  margin-right: 16%;
+  padding: 10px 5px;
+  border: 1px solid #ED7D31;
+  font: 1.2rem ＭＳ Ｐ明朝;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.joblist{
+  background-color: #FFDC99;
+  margin-right: 16%;
+  padding: 10px 5px;
+  border: 1px solid #FFC000;
+  font: 1rem ＭＳ Ｐ明朝;
+  margin-bottom: 5px;
+}
+.lbl_job_title{
+  color: #4472C4;
+  font: 1.1rem ＭＳ Ｐ明朝;
+  margin-bottom: 10px;
+}
+.job_salary{
+  margin-bottom: 10px;
+}
+.lbl_salary{
+  font-weight: bold;
+  color: black;
+
+}
+.spn_salary{
+background-color: #A3CC90;
+color: black;
+padding: 5px 5px;
+border: 1px solid #70AD47;
+font: 1rem ＭＳ Ｐ明朝;
+border-radius: 5px;
+}
+.p_job_description{
+  margin-bottom: 5px;
+}
+.job_category{
+  margin-bottom: 15px;
+}
+.lbl_category{
+  font-weight: bold;
+  color: black;
+}
+.job_category .spn_category{
+  background-color: #70AD47;
+  color: white;
+  padding: 5px 5px;
+  border: 1px solid #91A153;
+  font: 1rem ＭＳ Ｐ明朝;
+  border-radius: 5px;
+
+}
+.job_skills{
+
+  margin-bottom: 10px;
+}
+.lbl_skills{
+  background-color: #4472C4;
+  color: white;
+  padding: 5px 10px;
+  border: 1px solid #91A153;
+  font: 1rem ＭＳ Ｐ明朝;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+#p_job_description{
+  white-space: pre-wrap;
+}
+#p_about_employer, #p_about{
+  white-space: pre-wrap;
+}
+.job_create{
+  padding-top: 5px;
+}
+.joboffer{
+  padding-top: 5px;
+  margin-top: 10px;
+  padding-left: 16%;
+}
+.searchjob{
+  background-color: #ffd891;
+  border: 1px solid #ffc000;
+  margin-right: 16%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.h3_searchjob{
+  font: 1.8rem ＭＳ Ｐ明朝 !important;
+  color: black;
+  padding-left: 10px;
+  
+}
+.searchjobbox{
+  background-color: #ffd687;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-right: 16%;
+  padding-left: 30px;
+  border: 1px solid #ffc000;
+}
+.searchjobbox .form-group .select_category {
+ min-width: 300px !important;
+  margin-left: 100px ;
+  position: relative;
+
+}
+.btn_search{
+  font-style: bold;
+  font: 1.5rem ＭＳ Ｐ明朝;
+  width: 110px;
+  height: 45px !important;
+}
+.btn_search{
+  color: black;
+  background-color: #9bacd9;
+  font-size: 14px;
+  font: 1.5rem ＭＳ Ｐ明朝;
+  border-radius: 5px;
+
+  border: 1px solid #4472C4;
+}
+.btn_search:hover{
+  color: goldenrod;
+  background: #747e9b;
+  font-weight: bolder;
+}
+
+.btn_reset{
+  font-style: bold;
+  font: 1.5rem ＭＳ Ｐ明朝;
+  width: 110px;
+  height: 45px !important;
+  margin-left: 20px;
+}
+.btn_reset{
+  color: white;
+  background-color: #a6a6a6;
+  font-size: 14px;
+  font: 1.5rem ＭＳ Ｐ明朝;
+  border-radius: 5px;
+  
+  border: 1px solid #a5a5a5;
+}
+.btn_reset:hover{
+  color: goldenrod;
+  background: #888686;
+  font-weight: bolder;
+}
+.btn_view_work{
+  background-color: #808080;
+  color: black;
+  padding: 5px 5px;
+  border: 1px solid black;
+  font: 1rem ＭＳ Ｐ明朝 ;
+  float: right;
+}
+#btn_view_work{
+  color: black;
+}
+.btn_view_work:hover{
+  background-color: #6e6e6e;
+  font-weight: bold;
+}
+/* employer search */
+.lbl_jobseeker_name{
+  color: #4472C4;
+  font: 1.5rem ＭＳ Ｐ明朝;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.employerlist{
+  background-color: #FFDC99;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  margin-right: 16%;
+  padding-left: 30px;
+  border: 1px solid #ffc000;
+}
+.employer_skill{
+  margin-bottom: 15px;
+ 
+}
+.employer_spn_skill{
+  background-color: #4472c4;
+  color: white;
+  padding: 5px 10px;
+  border: 1px solid #91A153;
+  font: 1rem ＭＳ Ｐ明朝;
+  border-radius: 5px;
+  font-style: bold;
+  margin-right: 10px;
+}
+
+.p_about{
+  margin-top: 10px;
+ 
+  font: 1rem ＭＳ Ｐ明朝;
+  font-weight: bold;
+}
+
+.btn_view_profile{
+  background-color: #808080;
+  color: black;
+  padding: 6px 10px;
+  border: 1px solid black;
+  font: 1rem ＭＳ Ｐ明朝 ;
+  
+}
+#btn_view_profile{
+  color: black;
+}
+.btn_view_profile:hover{
+  background-color: #6e6e6e;
+  font-weight: bold;
+}
+#e21{
+  font:1rem ＭＳ Ｐ明朝 ;
+}

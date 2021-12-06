@@ -1,0 +1,28 @@
+<div class="sign_up_screen">
+    <div class="sign_up">
+        <center><h3>無料サインアップ。始めましょう。</h3></center>
+    </div>
+    <div class="sign_up_col" style="min-height: 350px">
+        <div class="columns">
+            <div class="field column is-8">
+                <center>
+                    <h3 class="lbl_searchjob">求人を検索していますか？</h3>
+                    <p>求人を検索して、もっと稼ぎましょう。</p>
+                </center>
+                <div class="btn_registerforwork">
+                    <%= link_to "求人ために登録", new_jobseeker_path, :class=>"button", :id=>"btn_registerforwork" %>
+                </div>
+            </div>
+            <div class="field column is-10 search2">
+                <center>
+                    <h3 class ="lbl_searchjobseeker">求職者を検索していますか？</h3>
+                    <p> 仕事を投稿し、作業員を検索して、作業を終わらせましょう。</p>
+                </center>
+                <div class="btn_registertohire">
+                    <%= link_to "雇うために登録", new_employer_path, :class=>"button", :id=>"btn_registertohire" %>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
